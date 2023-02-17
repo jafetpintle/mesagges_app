@@ -1,5 +1,6 @@
 package com.mesagges_app;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 public class MenuSession {
     public static void menuSession(Scanner sc){
@@ -38,5 +39,10 @@ public class MenuSession {
                     break;
             }
         }while(option != 6);
+        try {
+            DaoMessage.closeConecttion();
+        }catch (SQLException e){
+            System.out.println(e);
+        }
     }
 }

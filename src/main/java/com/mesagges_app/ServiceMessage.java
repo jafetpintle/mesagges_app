@@ -1,5 +1,6 @@
 package com.mesagges_app;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class ServiceMessage {
@@ -19,7 +20,7 @@ public class ServiceMessage {
     }
 
     public static void listMessages(){
-
+        DaoMessage.readMessage();
     }
 
     public static void deleteMessage(){
@@ -29,4 +30,5 @@ public class ServiceMessage {
     public static void editMessage(){
 
     }
+
 }

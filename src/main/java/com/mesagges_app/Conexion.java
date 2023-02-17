@@ -12,10 +12,10 @@ public class Conexion {
         try{
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mensajes_app", "root", "toor");
             if(connection !=null){
-                System.out.printf("Connection succesfull");
+                System.out.println("Connection succesfull");
             }
         }catch(SQLException e){
-            System.out.printf("Connection failed");
+            System.out.println("Connection failed");
         }
         return connection;
     }

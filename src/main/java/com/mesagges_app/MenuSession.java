@@ -20,16 +20,16 @@ public class MenuSession {
 
             switch (option){
                 case 1:
-
+                    ServiceMessage.createMessage();
                     break;
                 case 2:
-
+                    ServiceMessage.listMessages();
                     break;
                 case 3:
-
+                    ServiceMessage.deleteMessage();
                     break;
                 case 4:
-
+                    ServiceMessage.editMessage();
                     break;
                 case 5:
 

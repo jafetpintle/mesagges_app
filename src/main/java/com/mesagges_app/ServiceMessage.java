@@ -1,6 +1,6 @@
 package com.mesagges_app;
 
-public class DaoService {
+public class ServiceMessage {
     public static void createMessage(){
 
     }

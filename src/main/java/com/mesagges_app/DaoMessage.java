@@ -2,7 +2,7 @@ package com.mesagges_app;
 
 public class DaoMessage {
     public static void createMessage(Message message){
-
+        
     }
 
     public static void readMessage(){

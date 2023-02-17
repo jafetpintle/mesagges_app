@@ -53,11 +53,50 @@ public class DaoMessage {
 
 
     public static void deleteMessage(int id_message){
+        try(Connection connection = con.getConnection()){
+            PreparedStatement ps = null;
+            try{
+                String query= "DELETE FROM `mensajes_app`.`messages` WHERE(`id_message`)=?";
+                ps = connection.prepareStatement(query);
+                ps.setInt(1,id_message);
+                int rowsUpdated = ps.executeUpdate();
 
+                //Check if rows has been updated
+                if(rowsUpdated!=0)
+                    System.out.println("Message has been deleted succesfully");
+                else{
+                    System.out.printf("Error: ID message doesn't exist");
+                }
+            }catch (SQLException ex){
+                System.out.println(ex);
+            }
+        }catch (SQLException e){
+            System.out.println(e);
+        }
     }
 
     public static void updateMessage(Message message){
+        try(Connection connection = con.getConnection()){
+            PreparedStatement ps = null;
+            try{
+                String query= "UPDATE `mensajes_app`.`messages` SET `message` = ? WHERE id_message = ?";
+                ps = connection.prepareStatement(query);
+                ps.setString(1,message.getContent());
+                ps.setInt(2,message.getId());
+                int rowsUpdated = ps.executeUpdate();
 
+                //Check if rows has been updated
+                if(rowsUpdated!=0)
+                    System.out.println("Message has been updated succesfully");
+                else{
+                    System.out.printf("Error: ID message was not found");
+                }
+            }catch (SQLException ex){
+                System.out.println(ex);
+            }
+        }catch (SQLException e){
+            System.out.println(e);
+        }
     }
 
     public static void closeConecttion() throws SQLException {

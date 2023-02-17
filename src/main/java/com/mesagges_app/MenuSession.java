@@ -9,7 +9,7 @@ public class MenuSession {
                 + "1. Write message \n"
                 + "2. Read message \n"
                 + "3. Delete Message \n"
-                + "4. Edit profile \n"
+                + "4. Edit message \n"
                 + "5. Your profile \n"
                 + "6. Logout \n");
 

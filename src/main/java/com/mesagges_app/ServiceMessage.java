@@ -27,7 +27,7 @@ public class ServiceMessage {
 
     public static void deleteMessage(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Type the ID message to delete: ");
+        System.out.println("Enter the ID message to delete: ");
         int id_message = sc.nextInt();
         DaoMessage.deleteMessage(id_message);
     }
@@ -35,6 +35,15 @@ public class ServiceMessage {
     public static void editMessage(){
         Message ms = new Message();
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the message ID to update:");
+        int id = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter the new message: ");
+        String message = sc.nextLine();
+        ms.setContent(message);
+        ms.setId(id);
+
+        DaoMessage.updateMessage(ms);
     }
 
 }
